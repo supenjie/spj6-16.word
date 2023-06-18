@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <button id="searchButton">搜索</button>
+  
+  <div id="searchBoxContainer" class="hidden">
+    <input type="text" id="searchInput" placeholder="请输入搜索内容">
+    <button id="submitSearch">开始搜索</button>
+  </div>
+  
+  <script src="./jquery-3.7.0.min.js"></script>
+  <style>
+    .hidden {
+  display: none;
+}
+
+#searchBoxContainer {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+#searchInput {
+  margin-right: 10px;
+}
+
+#submitSearch {
+  padding: 5px 10px;
+}
+  </style>
+</body>
+<script>
+    const searchButton = document.getElementById("searchButton");
+const searchBoxContainer = document.getElementById("searchBoxContainer");
+const submitSearch = document.getElementById("submitSearch");
+
+searchButton.addEventListener("click", () => {
+  searchBoxContainer.classList.remove("hidden");
+});
+
+submitSearch.addEventListener("click", () => {
+  const searchInput = document.getElementById("searchInput").value;
+  // 在这里执行搜索操作，可以使用输入的内容进行搜索
+  console.log("搜索内容：" + searchInput);
+});
+</script>
+</html>

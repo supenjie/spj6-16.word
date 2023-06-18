@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>标签页</title>
+    <link rel="stylesheet" href="./标签页.css" />
+    <link rel="stylesheet" href="../6-16考试/layuiAdmin-master/admin/pro/layui/css/layui.css" />
+    <style type="text/css">
+       
+        .tagcloud-content {
+            text-align: justify;
+        }
+
+        .page-container {
+            position: relative;
+            box-sizing: border-box;
+            width: 80%;
+            max-width: 928px;
+            height: 100%;
+            background-color: #5fb878;
+        }
+
+        .page-container .page-main-content .page-main-content-middle {
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 38px 0;
+        }
+
+        .page-container .page-main-content {
+            position: relative;
+            box-sizing: border-box;
+            padding-top: 70px;
+        }
+
+        .page-container {
+            margin: 0 auto;
+            padding-top: 5%;
+        }
+        .header-wrapper {
+            box-shadow: 10px 12px 12px 0px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .header-wrapper:hover {
+            box-shadow: 18px 18px 18px 0px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .layui-nav {
+            box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.0) !important;
+        }
+        .light-mode{
+            background-color: #5fb878;
+        }
+    </style>
+</head>
+
+<body class="light-mode" inmaintabuse="1">
+    <div class="progress-bar-container">
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    </div>
+
+    <main class="page-container">
+        <div class="page-main-content is-home">
+            <div class="page-main-content-top">
+                <header class="header-wrapper">
+                    <ul class="layui-nav">
+                        <a href="./616考试.html" id="h1">程序员小明</a>
+                        <li class="layui-nav-item layui-this"><a href="./616考试.html">首页</a></li>
+                        <li class="layui-nav-item">
+                            <a href="./归档.html">归档</a>
+                        </li>
+                        <li class="layui-nav-item"><a href="./标签页.html">标签</a></li>
+                        <li class="layui-nav-item">
+                            <a href="javascript:;">添加</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="">菜单1</a></dd>
+                                <dd><a href="">菜单2</a></dd>
+                                <dd><a href="">菜单3</a></dd>
+                            </dl>
+                        </li>
+                        <li class="layui-nav-item">
+                            <a href="./616考试.html">关于</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="">关于1</a></dd>
+                                <dd class="layui-this"><a href="">关于2</a></dd>
+                                <dd><a href="">关于3</a></dd>
+                            </dl>
+                        </li>
+                        <li class="layui-nav-item"><a href="./搜索.html" id="a">🔍︎</a></li>
+                    </ul>
+            </div>
+        </div>
+        </div>
+        <div class="page-main-content-middle">
+            <div class="main-content">
+                <div class="fade-in-down-animation">
+                    <div class="tagcloud-container">
+                        <div class="tagcloud-content">
+                            <a href="./Centos.html" style="font-size: 1rem;" data-pjax-state="">Centos</a>
+                            <a href="./Charles.html" data-pjax-state="">Charles</a>
+                            <a href="./ChatGPT.html" style="font-size: 1.06rem;" data-pjax-state="">ChatGPT</a>
+                            <a href="./DataGrip.html" style="font-size: 1rem;" data-pjax-state="">DataGrip</a>
+                            <a href="./Docker.html" style="font-size: 1.12rem;" data-pjax-state="">Docker</a>
+                            <a href="./Docx.html" style="font-size: 1.06rem;" data-pjax-state="">Docx</a>
+                            <a href="./Elasticsearch.html" style="font-size: 1.18rem;" data-pjax-state="">Elasticsearch</a>
+                            <a href="./Freemarker.html" style="font-size: 1.06rem;" data-pjax-state="">Freemarker</a>
+                            <a href="./Git.html" style="font-size: 1.06rem;" data-pjax-state="">Git</a>
+                            <a href="./Hexo.html" style="font-size: 1.18rem;" data-pjax-state="">Hexo</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">Homebrew</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">Iterm2</a>
+                            <a href="" style="font-size: 1.6rem;" data-pjax-state="">Java</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">Jenkins</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">Kindle</a>
+                            <a href="" style="font-size: 1.36rem;" data-pjax-state="">Linux</a>
+                            <a href="" style="font-size: 1.3rem;" data-pjax-state="">Mac</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">Mybatis</a>
+                            <a href="" style="font-size: 1.42rem;" data-pjax-state="">Mysql</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">Navicat</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">Nginx</a>
+                            <a href="" style="font-size: 1.24rem;" data-pjax-state="">Python</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">RocketMQ</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">RocketMq</a>
+                            <a href="" style="font-size: 1.06rem;" data-pjax-state="">Shell</a>
+                            <a href="" style="font-size: 1.06rem;" data-pjax-state="">Spring</a>
+                            <a href="" style="font-size: 1.54rem;" data-pjax-state="">SpringBoot</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">Zsh</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">cdn</a>
+                            <a href="" style="font-size: 1.06rem;" data-pjax-state="">dev</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">email</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">exception</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">maven</a>
+                            <a href="" style="font-size: 1.06rem;" data-pjax-state="">mq</a>
+                            <a href="" style="font-size: 1.06rem;" data-pjax-state="">redis</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">swagger</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">vue</a>
+                            <a href="" style="font-size: 1.48rem;" data-pjax-state="">工具</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">建站</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">微信公众号</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">支付</a>
+                            <a href="" style="font-size: 1rem;" data-pjax-state="">日常</a>
+                            <a href="" style="font-size: 1.06rem;" data-pjax-state="">算法</a>
+                            <a href="" style="font-size: 1.06rem;" data-pjax-state="">面试</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="info-container">
+                <div class="copyright-info info-item">
+                    &copy;
+                    <span>2018</span> -
+                    2023
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>
+                    &nbsp;<a href="#">❤&nbsp;小明</a>
+                </div>
+                <!-- <script async data-pjax
+                        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+                <div class="website-count info-item">
+                    访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                </div>
+                <div class="theme-info info-item">
+                    由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version"
+                        target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+                </div>
+                <div class="icp-info info-item">
+                    <a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">
+                        京ICP备19029015号-1
+                    </a>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>

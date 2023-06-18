@@ -1,0 +1,1055 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="程序员小明 | Java | Spring Boot | Spring Cloud | ElasticSearch |日常开发 |最新干货分享">
+    <meta name="description" content="Spring Boot, Spring Cloud,日常开发, ElasticSearch, 微服务, 并发编程, 源码分析,Java,程序员小明">
+    <meta name="author" content="小明">
+    
+    <title>
+        
+            归档 |
+        
+        程序员小明
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"mynamecoder.com","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":null,"favicon":"/images/logo.svg","avatar":"/images/avatar.png","font_size":null,"font_family":"Optima-Regular,PingFangTC-light","hover":{"shadow":true,"scale":true},"first_screen":{"enable":false,"header_transparent":true,"background_img":"https://img.mynamecoder.com/20230224112801.jpeg","description":"||","font_color":"","hitokoto":true},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"RYD6fM3F1jQ4aTSXOzbclYi6-9Nh9j0Va","appkey":"mjF7jJLYlbIcPU2mUOoh0I88","server_urls":null,"meta":["nick","mail","link"],"placeholder":"说点什么"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":false,"min2read":false},"img_align":"left","copyright_info":true},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566816837076058"
+     crossorigin="anonymous"></script>
+    <script async src="/live2d-widget/autoload.js"></script>
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="程序
+员小明 | Java | Spring Boot | Spring Cloud | ElasticSearch |日常开发 |最新干货分享" type="application/atom+xml"> -->
+<link rel="stylesheet" href="./layuiAdmin-master/admin/pro/layui/css/layui.css">
+<link rel="stylesheet" href="./标签页.css">
+<style>
+    body {
+        background-color: #5fb878;
+    }
+
+    .page-container .page-main-content .page-main-content-middle {
+        background-color: #5fb878;
+        margin-top: -10px;
+    }
+    footer{
+        background-color: #5fb878;
+        position: relative!important;
+    }
+</style>
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+            <div class="header-content">
+
+
+                <div class="right">
+                    <div class="pc">
+                        <ul class="layui-nav">
+                            <a href="./616考试.html" id="h1">程序员小明</a>
+                            <li class="layui-nav-item layui-this"><a href="./616考试.html">首页</a></li>
+                            <li class="layui-nav-item">
+                                <a href="./归档.html">归档</a>
+                            </li>
+                            <li class="layui-nav-item"><a href="./标签页.html">标签</a></li>
+                            <li class="layui-nav-item">
+                                <a href="javascript:;">添加</a>
+                                <dl class="layui-nav-child">
+                                    <dd><a href="">菜单1</a></dd>
+                                    <dd><a href="">菜单2</a></dd>
+                                    <dd><a href="">菜单3</a></dd>
+                                </dl>
+                            </li>
+                            <li class="layui-nav-item">
+                                <a href="./616考试.html">关于</a>
+                                <dl class="layui-nav-child">
+                                    <dd><a href="">关于1</a></dd>
+                                    <dd class="layui-this"><a href="">关于2</a></dd>
+                                    <dd><a href="">关于3</a></dd>
+                                </dl>
+                            </li>
+                            <li class="layui-nav-item"><a href="./搜索.html" id="a">🔍︎</a></li>
+                        </ul>
+                    </div>
+                    <div class="mobile">
+        
+                        <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+        
+                        <div class="icon-item menu-bar">
+                            <div class="menu-bar-middle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="archive-container ">
+        
+<div class="archive-list-container">
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2023</span>
+                <span class="archive-year-post-count">[16]</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/59086.html"
+                        >RocketMQ分布式事务原理</a>
+                        <span class="article-date">05-30</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/21838.html"
+                        >RocketMQ消息丢失场景及解决办法</a>
+                        <span class="article-date">05-30</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/26485.html"
+                        >Mysql：用覆盖索引解决回表查询</a>
+                        <span class="article-date">05-29</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/9949.html"
+                        >Spring容器创建流程</a>
+                        <span class="article-date">05-23</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/990.html"
+                        >Java Spring Bean的生命周期</a>
+                        <span class="article-date">05-23</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/30756.html"
+                        >自己感觉好用的工具列表</a>
+                        <span class="article-date">04-24</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/46554.html"
+                        >Docx文档如何实现的自动编号？</a>
+                        <span class="article-date">03-30</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/62899.html"
+                        >ChatGPT太太太太太香了</a>
+                        <span class="article-date">03-28</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/5013.html"
+                        >这年头，谁的好友列表还没有躺一个ChatGPT啊？</a>
+                        <span class="article-date">03-18</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/10018.html"
+                        >Python常用API总结【小白必看】</a>
+                        <span class="article-date">03-18</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/4059.html"
+                        >确定了，今天带一个看板娘回家</a>
+                        <span class="article-date">03-09</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/22086.html"
+                        >常用Github表情大全</a>
+                        <span class="article-date">03-04</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/7e8c.html"
+                        >开发随记</a>
+                        <span class="article-date">02-23</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/5676.html"
+                        >关于谷歌浏览器占用的端口号</a>
+                        <span class="article-date">02-09</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/59172.html"
+                        >『原神』电脑壁纸4K高清无水印</a>
+                        <span class="article-date">02-05</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/55194.html"
+                        >Docker常用命令</a>
+                        <span class="article-date">01-31</span>
+                    </li>
+                
+            </ul>
+        </section>
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2022</span>
+                <span class="archive-year-post-count">[14]</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/42390.html"
+                        >selenium复用已打开浏览器</a>
+                        <span class="article-date">12-15</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/57739.html"
+                        >Python更换国内镜像源</a>
+                        <span class="article-date">12-15</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/62773.html"
+                        >一键安装python3</a>
+                        <span class="article-date">10-16</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/50161.html"
+                        >ElasticSearch常用的API</a>
+                        <span class="article-date">09-26</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/20547.html"
+                        >「Elasticsearch」ES重建索引怎么才能做到数据无缝迁移呢？</a>
+                        <span class="article-date">09-26</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/51810.html"
+                        >常见技术用语英文缩写</a>
+                        <span class="article-date">09-08</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/44073.html"
+                        >用正则截取两个符号之间的内容</a>
+                        <span class="article-date">08-25</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/46863.html"
+                        >安利一个Mac下好用的抓包工具-Charles</a>
+                        <span class="article-date">08-14</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/22588.html"
+                        >DataGrip连接Mysql报08S01解决方案</a>
+                        <span class="article-date">07-22</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/2207.html"
+                        >Mac系统下Datagrip打不开、点击没反应？</a>
+                        <span class="article-date">07-21</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/43315.html"
+                        >使用「爱屋及乌」推送电子书到Kindle</a>
+                        <span class="article-date">05-28</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/45615.html"
+                        >解决SSH登录Linux长时间不操作就会自动断开的问题</a>
+                        <span class="article-date">05-15</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/57219.html"
+                        >Mac下安装chromedriver</a>
+                        <span class="article-date">03-17</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/8569.html"
+                        >2021年终总结</a>
+                        <span class="article-date">01-03</span>
+                    </li>
+                
+            </ul>
+        </section>
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2021</span>
+                <span class="archive-year-post-count">[7]</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/37910.html"
+                        >「实用」打造自我感觉非常漂亮的Mac终端</a>
+                        <span class="article-date">12-14</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/2702.html"
+                        >「实用」使用阿里云的镜像仓库存储自己的镜像</a>
+                        <span class="article-date">11-26</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/8868.html"
+                        >「日志」Navicat统计的行数竟然和表实际行数不一致？！</a>
+                        <span class="article-date">11-26</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/1a81.html"
+                        >「记录」日常开发当中遇到的一些问题</a>
+                        <span class="article-date">10-26</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/65482.html"
+                        >「日志」Redis开启事务</a>
+                        <span class="article-date">09-05</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/63927.html"
+                        >通过shell脚本一键安装JDK8</a>
+                        <span class="article-date">03-19</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/d0da.html"
+                        >Springboot配置logback日志</a>
+                        <span class="article-date">01-05</span>
+                    </li>
+                
+            </ul>
+        </section>
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2020</span>
+                <span class="archive-year-post-count">[11]</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/21452.html"
+                        >「Elasticsearch」SpringBoot快速集成ES</a>
+                        <span class="article-date">12-07</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/35755.html"
+                        >Linux服务器的晴雨表——top命令</a>
+                        <span class="article-date">10-11</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/8425.html"
+                        >如何使用Freemarker生成Word文件</a>
+                        <span class="article-date">09-14</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/38722.html"
+                        >解决SpringBoot jar包中的文件读取问题</a>
+                        <span class="article-date">09-14</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/6653.html"
+                        >记一次因使用Date引起的线上BUG处理</a>
+                        <span class="article-date">04-20</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/44518.html"
+                        >Java中的try，如何开启新姿势？</a>
+                        <span class="article-date">04-13</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/46081.html"
+                        >「规范」如何优雅地代码分层？</a>
+                        <span class="article-date">04-12</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/63677.html"
+                        >「SpringBoot」如何优雅地管理SpringBoot项目</a>
+                        <span class="article-date">04-07</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/8644.html"
+                        >我是如何用IDEA调试BUG的？</a>
+                        <span class="article-date">03-30</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/17116.html"
+                        >hexo推荐插件</a>
+                        <span class="article-date">03-29</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/6cce.html"
+                        >「Elasticsearch」查询并删除匹配文档之_delete_by_query</a>
+                        <span class="article-date">03-21</span>
+                    </li>
+                
+            </ul>
+        </section>
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2019</span>
+                <span class="archive-year-post-count">[46]</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/b5c2.html"
+                        >ThreadLocal解决了什么问题？</a>
+                        <span class="article-date">12-15</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/4298.html"
+                        >Mac使用iTerm2 一键免密登录</a>
+                        <span class="article-date">11-26</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/707c.html"
+                        >Mac安装Homebrew并配置Redis</a>
+                        <span class="article-date">11-21</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/268.html"
+                        >订单超时取消的解决方案</a>
+                        <span class="article-date">10-30</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/35e7.html"
+                        >hexo用自己的服务器搭建博客</a>
+                        <span class="article-date">10-12</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/2969.html"
+                        >hexo+git搭建自己的博客</a>
+                        <span class="article-date">10-12</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/d2c.html"
+                        >hexo忽略编译某些文件</a>
+                        <span class="article-date">10-10</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/c01e.html"
+                        >linux常用命令（持续更新）</a>
+                        <span class="article-date">09-19</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/3735.html"
+                        >springboot发送邮件</a>
+                        <span class="article-date">09-14</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/b1fe.html"
+                        >常见的bug总结，快来看一下你有没有遇到</a>
+                        <span class="article-date">07-24</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/9bfd.html"
+                        >JDK8日常开发系列：Consumer详解</a>
+                        <span class="article-date">07-13</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/3fc1.html"
+                        >Mysql索引优化初体验-使用索引</a>
+                        <span class="article-date">07-04</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/aab3.html"
+                        >Mysql索引优化初体验-了解索引</a>
+                        <span class="article-date">07-03</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/1b5.html"
+                        >mybatis常用总结</a>
+                        <span class="article-date">06-22</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/7836.html"
+                        >【面试】最容易被问到的N种排序算法！</a>
+                        <span class="article-date">06-20</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/17df.html"
+                        >阿里云企业云邮箱收发设置</a>
+                        <span class="article-date">06-16</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/4169.html"
+                        >linux centos如何安装docker</a>
+                        <span class="article-date">06-14</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/db00.html"
+                        >Jenkins自动化部署入门（一）</a>
+                        <span class="article-date">06-14</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/5a53.html"
+                        >快速优雅的在linux服务器上安装jdk8</a>
+                        <span class="article-date">06-13</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/d6b5.html"
+                        >jdk8 Optional 的正确使用姿势</a>
+                        <span class="article-date">06-04</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/e48d.html"
+                        >springboot快速集成swagger</a>
+                        <span class="article-date">05-30</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/6d2.html"
+                        >程序员的简历到底该怎么写？</a>
+                        <span class="article-date">05-29</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/d69c.html"
+                        >公众号开发入门：查询用户是否已经关注公众号？</a>
+                        <span class="article-date">05-28</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/5d3b.html"
+                        >常用的几个消息组件</a>
+                        <span class="article-date">05-20</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/f00a.html"
+                        >JDK 1.8 处理时间常用举例</a>
+                        <span class="article-date">05-16</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/d6d4.html"
+                        >9 个你应该知道的支付系统开源项目</a>
+                        <span class="article-date">05-11</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/2bdc.html"
+                        >牢记maven的scope属性</a>
+                        <span class="article-date">05-10</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/75a0.html"
+                        >Mac安装Homebrew的那些事儿</a>
+                        <span class="article-date">05-09</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/2246.html"
+                        >Mac安装破解Navicat</a>
+                        <span class="article-date">05-09</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/de65.html"
+                        >SpringBoot:如何优雅地处理全局异常？</a>
+                        <span class="article-date">05-09</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/8834.html"
+                        >git小技巧--如何从其他分支merge个别文件或文件夹</a>
+                        <span class="article-date">05-09</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/54c3.html"
+                        >还没有自己的网站？ICP备案了解一下！</a>
+                        <span class="article-date">05-09</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/ead7.html"
+                        >这就是CDN回源原理和CDN多级缓存啊！</a>
+                        <span class="article-date">05-08</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/48.html"
+                        >Git删除暂存区或版本库中的文件</a>
+                        <span class="article-date">05-07</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/bf32.html"
+                        >Nginx配置upstream实现负载均衡</a>
+                        <span class="article-date">05-06</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/a8a6.html"
+                        >小明收藏的利器</a>
+                        <span class="article-date">05-05</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/3816.html"
+                        >mysql日期相关</a>
+                        <span class="article-date">04-29</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/f887.html"
+                        >mysql函数之FIND_IN_SET()</a>
+                        <span class="article-date">04-28</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/4635.html"
+                        >linux命令</a>
+                        <span class="article-date">04-23</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/72bf.html"
+                        >mysql常用操作</a>
+                        <span class="article-date">04-15</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/5bd3.html"
+                        >动态控制多层for循环嵌套</a>
+                        <span class="article-date">04-12</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/3388.html"
+                        >springboot 2.x集成redis作为cache</a>
+                        <span class="article-date">04-04</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/6ca7.html"
+                        >mysql误删一张表</a>
+                        <span class="article-date">03-28</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/2366.html"
+                        >vue cli + axios + springboot 实现文件下载</a>
+                        <span class="article-date">03-08</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/e319.html"
+                        >left join on &amp; where</a>
+                        <span class="article-date">03-08</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/bf38.html"
+                        >@NotNull</a>
+                        <span class="article-date">03-01</span>
+                    </li>
+                
+            </ul>
+        </section>
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2018</span>
+                <span class="archive-year-post-count">[2]</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/29d7.html"
+                        >springboot</a>
+                        <span class="article-date">06-15</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/p/2f61.html"
+                        >JDK8</a>
+                        <span class="article-date">06-15</span>
+                    </li>
+                
+            </ul>
+        </section>
+    
+</div>
+
+    </div>
+</div>
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2018</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">小明</a>
+            
+        </div>
+        
+           
+            <div class="website-count info-item">
+                
+                    访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+            <div class="icp-info info-item">
+                <a target="_blank" rel="nofollow"
+                   href="https://beian.miit.gov.cn"
+                >
+                    京ICP备19029015号-1
+                </a>
+            </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

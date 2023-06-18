@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>616考试（苏朋杰）</title>
+    <link rel="stylesheet" href="./标签页.css">
+    <link href="./layuiAdmin-master/admin/pro/layui/css/layui.css" rel="stylesheet">
+    <!-- <script src="./layuiAdmin-master/admin/pro/layui/layui.js"></script> -->
+    <style>
+        #next{
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            bottom: 12%;
+            right: 23%;
+            width: 50px;
+            height: 30px;
+            border-radius: 5px;
+            color: aliceblue;
+        }
+        #next a{
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+    <ul class="layui-nav">
+        <a href="./616考试.html" id="h1">程序员小明</a>
+        <li class="layui-nav-item layui-this"><a href="#">首页</a></li>
+        <li class="layui-nav-item">
+            <a href="./归档.html">归档</a>
+        </li>
+        <li class="layui-nav-item"><a href="./标签页.html">标签</a></li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">添加</a>
+            <dl class="layui-nav-child">
+                <dd><a href="">菜单1</a></dd>
+                <dd><a href="">菜单2</a></dd>
+                <dd><a href="">菜单3</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="./616考试.html">关于</a>
+            <dl class="layui-nav-child">
+                <dd><a href="">关于1</a></dd>
+                <dd class="layui-this"><a href="">关于2</a></dd>
+                <dd><a href="">关于3</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item"><a href="./搜索.html" id="a">🔍︎</a></li>
+    </ul>
+<div class="main">
+<div id="content">
+    <ul id="myul">
+       
+    </ul>
+</div>
+</div>
+<button id="next"><a href="./下一页.html">下一页</a></button>
+    <footer class="footer">
+        <div class="info-container">
+            <div class="copyright-info info-item">
+                &copy;
+                <span>2018</span> -
+                2023
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="#">❤&nbsp;小明</a>
+            </div>
+            <!-- <script async data-pjax
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+            <div class="website-count info-item">
+                访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+            </div>
+            <div class="theme-info info-item">
+                由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version"
+                    target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+            </div>
+            <div class="icp-info info-item">
+                <a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">
+                    京ICP备19029015号-1
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+<script>
+    const content = document.getElementById("content");
+    var arr = [{
+        name : '开发随记',
+        brief: '📒 记录每日开发过程中的一些碎片，持续更新',
+        time:'🕣3 个月前',
+        file:'🖿日常开发',
+        lable:'🏷Centos',
+        link:'./Centos.html',
+        links:'./Centos阅读全文.html'
+    },
+    {
+        name : 'RocketMQ分布式事务原理',
+        brief: '分布式事务常见的方案有TCC（Try-Confirm-Cancel），XA两阶段提交方案，可靠消息最终一致性方案，最大努力通知方案等等。其中可靠消息最终一致性方案主要就可以依靠RocketMQ来做，因为RocketMQ支持消息事务。先上一张图：Roc...',
+        time:'🕣2 周前',
+        file:'',
+        lable:'🏷Charles',
+        link:'./Charles.html',
+        links:'./Charles阅读全文.html'
+    },
+    {
+        name : 'RocketMQ消息丢失场景及解决办法',
+        brief: '既然在项目中使用了MQ，那么就不可避免的需要考虑消息丢失问题。',
+        time:'🕣2 周前',
+        file:'',
+        lable:'🏷ChatGPT',
+        link:'./ChatGPT.html',
+        links:'./ChatGPT阅读全文.html'
+    }
+    ,
+    {
+        name : 'Mysql：用覆盖索引解决回表查询',
+        brief: '先要从 InnoDB 的索引实现说起，InnoDB 有两大类索引：',
+        time:'🕣2 周前',
+        file:'',
+        lable:'🏷DataGrip ',
+        link:'./DataGrip.html',
+        links:'./DataGrip阅读全文.html'
+    }
+    ,
+    {
+        name : 'Spring容器创建流程',
+        brief: '参考地址：https://blog.csdn.net/weixin_37607613/article/details/126217559 关注微信公众号，获取更多资源',
+        time:'🕣2 周前',
+        file:'',
+        lable:'🏷Docker',
+        link:'./Docker.html',
+        links:'./Docker阅读全文.html'
+    }
+]
+    function messages(list) {
+            let html = "";
+            list.forEach((item) => {
+                html += `
+      <ul id='myul'>
+        <li id='myli'>
+            <a  id='onea' href='${item.links}'>${item.name}</a>
+            <p style='margin:20px 20px 0 20px'>${item.brief}</p>
+            <a href="#">${item.time}</a>
+            <a href="#">${item.file}</a>
+            <a href="${item.link}">${item.lable}</a>
+            <span id='top'>🔝</span>
+            <a id='lasta' href="${item.links}">阅读全文 ></a>
+        </li>
+      </ul>
+    `;
+            });
+            content.innerHTML = html;
+        }
+        messages(arr)
+
+</script>
+</html>

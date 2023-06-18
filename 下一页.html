@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>616考试（苏朋杰）</title>
+    <link rel="stylesheet" href="./标签页.css">
+    <link href="./layuiAdmin-master/admin/pro/layui/css/layui.css" rel="stylesheet">
+    <!-- <script src="./layuiAdmin-master/admin/pro/layui/layui.js"></script> -->
+    <style>
+        #next {
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            bottom: 12%;
+            right: 72%;
+            width: 50px;
+            height: 30px;
+            border-radius: 5px;
+            color: aliceblue;
+            
+        }
+
+        #next a {
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul class="layui-nav">
+            <a href="./616考试.html" id="h1">程序员小明</a>
+            <li class="layui-nav-item layui-this"><a href="./616考试.html">首页</a></li>
+            <li class="layui-nav-item">
+                <a href="./归档.html">归档</a>
+            </li>
+            <li class="layui-nav-item"><a href="./标签页.html">标签</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">添加</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">菜单1</a></dd>
+                    <dd><a href="">菜单2</a></dd>
+                    <dd><a href="">菜单3</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="./616考试.html">关于</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">关于1</a></dd>
+                    <dd class="layui-this"><a href="">关于2</a></dd>
+                    <dd><a href="">关于3</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="./搜索.html" id="a">🔍︎</a></li>
+        </ul>
+        <div class="main">
+            <div id="content">
+                <ul id="myul">
+
+                </ul>
+            </div>
+        </div>
+        <button id="next"><a href="./616考试.html">上一页</a></button>
+        <footer class="footer">
+            <div class="info-container">
+                <div class="copyright-info info-item">
+                    &copy;
+                    <span>2018</span> -
+                    2023
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>
+                    &nbsp;<a href="#">❤&nbsp;小明</a>
+                </div>
+                <!-- <script async data-pjax
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+                <div class="website-count info-item">
+                    访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                </div>
+                <div class="theme-info info-item">
+                    由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version"
+                        target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+                </div>
+                <div class="icp-info info-item">
+                    <a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">
+                        京ICP备19029015号-1
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+<script>
+    const content = document.getElementById("content");
+    var arr = [{
+        name: 'Java Spring Bean的生命周期 ',
+        brief: 'Java Spring Bean的生命周期包括以下阶段： 实例化：当Spring容器接收到创建Bean的请求时，它会使用Java反射机制创建一个Bean实例。 属性赋值：在实例化Bean之后，Spring容器会将Bean的属性值注入到Bean实例中...',
+        time: '🕣 3周前',
+        file: '',
+        label: '🏷︎ Docx',
+        link:'./Docx.html',
+        links:'./Docx阅读全文.html'
+    },
+    {
+        name: '自己感觉好用的工具列表',
+        brief: '🔧 一句老话，工欲善其事，必先利其器',
+        time: '🕣 1 个月前',
+        file: '',
+        label: '🏷︎  Elasticsearch',
+        link:'./Elasticsearch.html',
+        links:'./Elasticsearch阅读全文.html'
+        
+    },
+    {
+        name: 'Docx文档如何实现的自动编号？',
+        brief: '📃 不得不佩服优秀软件的规范',
+        time: '🕣 2个月前',
+        file: '🖿 SpringBoot',
+        label: '🏷︎  Freemarker',
+        link:'./Freemarker.html',
+        links:'./Freemarker阅读全文.html'
+        
+    },
+    {
+        name: 'ChatGPT太太太太太香了',
+        brief: ' 我感觉以后再也不用某度了',
+        time: '🕣 2个月前 ',
+        file: '',
+        label: '🏷︎ Git ',
+        link:'./Git.html',
+        links:'./Git阅读全文.html'
+        
+    },
+    {
+        name: '这年头，谁的好友列表还没有躺一个ChatGPT啊？',
+        brief: ' 你要是说这个，我可不困了',
+        time: '🕣 2个月前 ',
+        file: '',
+        label: '🏷︎ Hexo ',
+        link:'./Hexo.html',
+        links:'./Hexo阅读全文.html'
+    },
+    ]
+
+
+    function messages(list) {
+        let html = "";
+        list.forEach((item) => {
+            html += `
+      <ul id='myul'>
+        <li id='myli'>
+            <a  id='onea' href='${item.links}'>${item.name}</a>
+            <p style='margin:20px 20px 0 20px'>${item.brief}</p>
+            <a href="#">${item.time}</a>
+            <a href="#">${item.file}</a>
+            <a href="${item.link}">${item.label}</a>
+            <span id='top'>🔝</span>
+            <a id='lasta' href="${item.links}">阅读全文 ></a>
+        </li>
+      </ul>
+    `;
+        });
+        content.innerHTML = html;
+    }
+    messages(arr)
+
+</script>
+
+</html>
